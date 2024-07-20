@@ -5,5 +5,6 @@ import App from "./App";
 
 it("renders `<App />` correctly", () => {
   render(<App />);
-  expect(screen.getByRole("heading").textContent).toBe("Little Lemon");
+  const heading = screen.getByRole("heading");
+  expect(heading).toHaveTextContent(/^Little Lemon$/);
 });
