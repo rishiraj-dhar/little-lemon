@@ -3,7 +3,7 @@ function App() {
     <>
       <h1>Little Lemon</h1>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
