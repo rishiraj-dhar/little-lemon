@@ -16,6 +16,7 @@ module.exports = {
   plugins: ["jest-dom", "react-refresh", "testing-library"],
   rules: {
     "react/jsx-no-target-blank": "off",
+    "react/prop-types": "off",
     "react-refresh/only-export-components": [
       "warn",
       { allowConstantExport: true },
