@@ -1,0 +1,13 @@
+:root {
+  /* Colors */
+  --primary-green: #495e57;
+  --primary-yellow: #f4ce14;
+  --secondary-coral: #ee9972;
+  --secondary-peach: #fbdabb;
+  --monochrome-light: #edefee;
+  --monochrome-dark: #333333;
+
+  /* Fonts */
+  --font-sans: "Karla", sans-serif;
+  --font-serif: "Markazi Text", serif;
+}
