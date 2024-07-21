@@ -1,3 +1,5 @@
+import { Button } from "components/button";
+
 import bruschettaImage from "src/assets/bruschetta.jpg";
 import greekSaladImage from "src/assets/greek-salad.jpg";
 import heroImage from "src/assets/hero-image.jpg";
@@ -55,7 +57,7 @@ function App() {
             We are a family owned Mediterranean restaurant, focused on
             traditional recipes served with a modern twist.
           </p>
-          <button>Reserve a Table</button>
+          <Button>Reserve a Table</Button>
         </div>
         <div>
           <img src={heroImage} alt="Hero Image" />
@@ -66,7 +68,7 @@ function App() {
       <section>
         <hgroup>
           <h2>Specials</h2>
-          <button>Online Menu</button>
+          <Button>Online Menu</Button>
         </hgroup>
         <div>
           {specials.map((special, index) => (
@@ -77,7 +79,7 @@ function App() {
                   <p>{special.price}</p>
                 </hgroup>
                 <p>{special.desc}</p>
-                <button>Order a delivery</button>
+                <Button>Order a delivery</Button>
               </div>
               <div>
                 <img src={special.img} alt={"Image of " + special.name} />
