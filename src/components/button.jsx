@@ -8,7 +8,7 @@ import "./button.css";
  */
 export function Button({ children, ...props }) {
   return (
-    <button {...props} className="btn">
+    <button {...props} className={props.className + " " + "btn"}>
       {children}
     </button>
   );
