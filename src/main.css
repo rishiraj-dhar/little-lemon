@@ -1,0 +1,106 @@
+:root {
+  /* Colors */
+  --coral: #ee9972;
+  --coral-100: hsl(27, 86%, 77%);
+  --coral-200: hsl(25, 84%, 75%);
+  --coral-300: hsl(23, 82%, 73%);
+  --coral-400: hsl(21, 80%, 71%);
+  --coral-500: hsl(19, 78%, 69%);
+  --coral-600: hsl(17, 76%, 67%);
+  --coral-700: hsl(15, 74%, 65%);
+  --coral-800: hsl(13, 72%, 63%);
+  --coral-900: hsl(11, 70%, 61%);
+
+  --dark: #333333;
+  --dark-100: hsl(8, 8%, 28%);
+  --dark-200: hsl(6, 6%, 26%);
+  --dark-300: hsl(4, 4%, 24%);
+  --dark-400: hsl(2, 2%, 22%);
+  --dark-500: hsl(0, 0%, 20%);
+  --dark-600: hsl(0, 0%, 18%);
+  --dark-700: hsl(0, 0%, 16%);
+  --dark-800: hsl(0, 0%, 14%);
+  --dark-900: hsl(0, 0%, 12%);
+
+  --green: #495e57;
+  --green-100: hsl(168, 21%, 41%);
+  --green-200: hsl(166, 19%, 39%);
+  --green-300: hsl(164, 17%, 37%);
+  --green-400: hsl(162, 15%, 35%);
+  --green-500: hsl(160, 13%, 33%);
+  --green-600: hsl(158, 11%, 31%);
+  --green-700: hsl(156, 9%, 29%);
+  --green-800: hsl(154, 7%, 27%);
+  --green-900: hsl(152, 5%, 25%);
+
+  --light: #edefee;
+  --light-100: hsl(156, 12%, 99%);
+  --light-200: hsl(154, 10%, 97%);
+  --light-300: hsl(152, 8%, 95%);
+  --light-400: hsl(150, 6%, 93%);
+  --light-500: hsl(148, 4%, 91%);
+  --light-600: hsl(146, 2%, 89%);
+  --light-700: hsl(144, 0%, 87%);
+  --light-800: hsl(142, 0%, 85%);
+  --light-900: hsl(140, 0%, 83%);
+
+  --peach: #fbdabb;
+  --peach-100: hsl(37, 97%, 94%);
+  --peach-200: hsl(35, 95%, 92%);
+  --peach-300: hsl(33, 93%, 90%);
+  --peach-400: hsl(31, 91%, 88%);
+  --peach-500: hsl(29, 89%, 86%);
+  --peach-600: hsl(27, 87%, 84%);
+  --peach-700: hsl(25, 85%, 82%);
+  --peach-800: hsl(23, 83%, 80%);
+  --peach-900: hsl(21, 81%, 78%);
+
+  --yellow: #f4cf15;
+  --yellow-100: hsl(58, 99%, 60%);
+  --yellow-200: hsl(56, 97%, 58%);
+  --yellow-300: hsl(54, 95%, 56%);
+  --yellow-400: hsl(52, 93%, 54%);
+  --yellow-500: hsl(50, 91%, 52%);
+  --yellow-600: hsl(48, 89%, 50%);
+  --yellow-700: hsl(46, 87%, 48%);
+  --yellow-800: hsl(44, 85%, 46%);
+  --yellow-900: hsl(42, 83%, 44%);
+
+  /* Fonts */
+  --font-sans: "Karla", sans-serif;
+  --font-serif: "Markazi Text", serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+div#root {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+}
