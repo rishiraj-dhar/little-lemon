@@ -9,6 +9,7 @@ import lemonDessertImage from "src/assets/lemon-dessert.jpg";
 import sarahJohnsonImage from "src/assets/sarah-johnson.jpg";
 import michaelThompsonImage from "src/assets/michael-thompson.jpg";
 import emilyDavisImage from "src/assets/emily-davis.jpg";
+import { Link } from "react-router-dom";
 
 const specials = [
   {
@@ -88,7 +89,11 @@ export default function HomePage() {
               We are a family owned Mediterranean restaurant, focused on
               traditional recipes served with a modern twist.
             </p>
-            <Button className="hero-cta">Reserve a Table</Button>
+            <Button className="hero-cta">
+              <Link style={{ textDecoration: "none" }} to="booking">
+                Reserve a Table
+              </Link>
+            </Button>
           </div>
           <div className="hero-image">
             <img src={heroImage} alt="Hero Image" />

@@ -4,6 +4,7 @@ import App from "./App.jsx";
 import "./main.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/home-page.jsx";
+import BookingPage from "./pages/booking-page.jsx";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
+      },
+      {
+        path: "booking",
+        element: <BookingPage />,
       },
     ],
   },
