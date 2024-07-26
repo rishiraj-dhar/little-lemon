@@ -10,6 +10,13 @@ section.booking form#booking-form {
   padding: 2rem;
 }
 
+section.booking form#booking-form h1 {
+  color: var(--yellow);
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 400;
+}
+
 section.booking form#booking-form .booking-form-field > * {
   width: 100%;
 }
