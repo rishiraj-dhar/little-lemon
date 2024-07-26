@@ -114,6 +114,8 @@ export function BookingForm({ availableTimes, onDateChange, onSubmit }) {
               message: "Please select one or more guests",
               value: guestCountLimits.min,
             },
+            validate: (value) =>
+              !Number.isNaN(value) || "Please enter a valid number",
             valueAsNumber: true,
           })}
           id="guestCount"

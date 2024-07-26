@@ -40,9 +40,9 @@ section.hero > .inner-wrapper {
   display: grid;
   gap: 1rem;
   grid-template-areas:
-    "head head"
-    "main img";
-  grid-template-columns: 2fr 1fr;
+    "head head img"
+    "main . img";
+  grid-template-columns: minmax(auto, 16rem) 1fr minmax(auto, 14rem);
 }
 
 .hero-header {
@@ -84,15 +84,16 @@ section.hero > .inner-wrapper {
 }
 
 .hero-image {
-  position: relative;
+  align-self: end;
+  justify-self: end;
   grid-area: img;
+  width: 100%;
 }
 
 .hero-image img {
   border-radius: 0.5rem;
-  height: 100%;
   object-fit: cover;
-  position: absolute;
+  max-height: 12rem;
   width: 100%;
 }
 
@@ -112,23 +113,36 @@ section.specials {
 }
 
 .specials-item-row {
+  align-items: center;
   display: flex;
   gap: 1rem;
+  justify-content: start;
   overflow-x: auto;
+  margin-inline: auto;
   padding-block: 1rem;
   width: 100%;
 }
 
 .special-card {
-  background-color: var(--light-100);
-  border: 1px solid var(--dark);
+  background-color: var(--light);
   border-radius: 0.5em;
+  box-shadow:
+    0 4px 6px 1px rgb(0 0 0 / 0.1),
+    0 2px 4px 1px rgb(0 0 0 / 0.1);
   display: flex;
   flex: none;
   flex-direction: column-reverse;
   height: 28rem;
   overflow: hidden;
   width: 16rem;
+}
+
+.special-card:first-child {
+  margin-inline-start: 1rem;
+}
+
+.special-card:last-child {
+  margin-inline-end: 1rem;
 }
 
 .special-card-content {
@@ -172,8 +186,10 @@ section.specials {
   text-overflow: ellipsis;
 }
 
-.special-card-cta {
+.special-card-cta.btn {
   flex: none;
+  font-size: 1rem;
+  padding: 0.5rem;
 }
 
 .special-card-image {
@@ -193,21 +209,36 @@ section.testimonials {
 
 .testimonial-row {
   display: flex;
+  gap: 1rem;
+  margin-inline: auto;
   overflow-x: auto;
+  padding-bottom: 1rem;
   width: 100%;
 }
 
 .testimonial {
   background-color: var(--light-100);
-  border: 1px solid var(--dark);
   border-radius: 0.5em;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
   display: grid;
+  gap: 0.25rem;
   grid-template-areas:
     "image review"
     "name review"
     "rating review";
-  grid-template-columns: 9rem 18rem;
+  grid-template-columns: 8rem 18rem;
   padding: 1rem;
+  place-items: center;
+}
+
+.testimonial:first-child {
+  margin-inline-start: 1rem;
+}
+
+.testimonial:last-child {
+  margin-inline-end: 1rem;
 }
 
 .testimonial-contributor-image {
@@ -229,19 +260,40 @@ section.testimonials {
   font-family: var(--font-serif);
   font-size: 2rem;
   font-weight: 700;
+  line-height: 0.75;
+  text-align: center;
 }
 
 .testimonial-rating {
+  align-items: center;
+  display: flex;
+  font-family: var(--font-sans);
   grid-area: rating;
+  justify-content: start;
+}
+
+.testimonial-rating .testimonial-rating-value {
+  font-size: 1.5rem;
+  padding-right: 0.25rem;
+}
+
+.testimonial-rating .testimonial-rating-graphic {
+  font-size: 0.875rem;
 }
 
 .testimonial-review {
+  font-family: var(--font-sans);
   grid-area: review;
-  padding-left: 1rem;
+  padding-inline: 1rem;
+  text-align: justify;
 }
 
 section.about {
   background-color: var(--light);
+}
+
+.about-header {
+  padding-block: 1rem;
 }
 
 .about-title {
@@ -253,6 +305,33 @@ section.about {
 .about-subtitle {
   font-family: var(--font-serif);
   font-size: 2rem;
+}
+
+section.about .about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+section.about .image-list {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 100%;
+}
+
+section.about .image-list img {
+  border-radius: 0.5rem;
+  flex: 1 1 0%;
+}
+
+section.about .about-copy p {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+}
+
+section.about .about-copy p:not(:first-child) {
+  margin-block: 1rem;
 }
 
 footer {
@@ -270,6 +349,7 @@ footer .inner-wrapper {
 }
 
 .footer-logo {
+  align-self: center;
   flex: none;
 }
 
@@ -284,12 +364,22 @@ footer .inner-wrapper {
   font-weight: 400;
 }
 
+.footer-column-sub-header {
+  color: var(--coral);
+  font-family: var(--font-serif);
+  font-size: 1.375rem;
+  font-weight: 500;
+  padding: 0.5rem;
+}
+
 .footer-column-item {
   color: var(--light);
+  display: flex;
+  flex-direction: column;
   padding-block: 0.25rem;
 }
 
-nav ul {
+ul:has(li .nav-link) {
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -298,25 +388,79 @@ nav ul {
   text-align: center;
 }
 
-nav ul li {
+ul li:has(.nav-link) {
   cursor: pointer;
   display: flex;
   flex: none;
-  font-family: var(--font-sans);
-  font-weight: 400;
 }
 
 .nav-link {
-  text-decoration: none;
+  border-radius: 0.25em;
+  font-family: var(--font-sans);
+  font-weight: 400;
   padding: 0.5rem;
+  text-decoration: none;
   width: 100%;
+}
+
+header {
+  position: relative;
+}
+
+header nav {
+  position: fixed;
+  height: 100dvh;
+  width: 100dvw;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-100);
+}
+
+header nav[data-active="false"] {
+  left: -100dvw;
+  transition: left 0.2s ease-in;
+}
+
+header nav[data-active="true"] {
+  left: 0;
+  transition: left 0.2s ease-out;
+}
+
+header nav ul li .nav-link {
+  padding: 1rem 2rem;
+}
+
+header button.nav-trigger.btn {
+  background-color: var(--light-100);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  left: 1rem;
+}
+
+header nav button.nav-trigger.btn {
+  top: 2rem;
+}
+
+header button.nav-trigger.btn:hover,
+header button.nav-trigger.btn:active {
+  background-color: var(--light-100);
+}
+
+header .nav-trigger.btn img {
+  height: 2rem;
+  width: 2rem;
 }
 
 header .nav-link {
   color: var(--green);
 }
 
-header nav ul li:hover {
+header nav ul li .nav-link:hover {
   background-color: var(--light);
 }
 
@@ -324,8 +468,14 @@ footer .nav-link {
   color: var(--light);
 }
 
-footer nav ul li:hover {
+footer li .nav-link:hover {
   background-color: var(--dark-100);
+}
+
+main.confirmation-page {
+  display: flex;
+  flex: 1 1 0%;
+  flex-direction: column;
 }
 
 .confirmation-page section.outer-wrapper > .inner-wrapper {
@@ -338,12 +488,20 @@ footer nav ul li:hover {
 
 .confirmation-page section.booking-confirmation {
   background-color: var(--green);
+  flex: 1 1 0%;
 }
 
-.confirmation-page section.booking-confirmation h1 {
+.confirmation-page section.booking-confirmation h2 {
   color: var(--yellow);
   font-family: var(--font-serif);
   font-size: 3rem;
+}
+
+.confirmation-page section.booking-confirmation .booking-confirmation-msg {
+  color: var(--light);
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .confirmation-page section.booking-confirmation button {
@@ -352,9 +510,10 @@ footer nav ul li:hover {
 
 .confirmation-page section.upcoming-bookings {
   background-color: var(--yellow);
+  flex: 1 1 0%;
 }
 
-.confirmation-page section.upcoming-bookings h1 {
+.confirmation-page section.upcoming-bookings h2 {
   color: var(--dark);
   font-family: var(--font-serif);
   font-size: 3rem;
@@ -372,13 +531,33 @@ section.booking {
 }
 
 @media (min-width: 768px) {
+  header nav {
+    position: static;
+    height: unset;
+    width: unset;
+  }
+
+  header button.nav-trigger.btn {
+    display: none;
+  }
+
   header .inner-wrapper {
     flex-direction: row;
     justify-content: space-between;
   }
 
-  header nav ul {
+  header nav ul:has(li .nav-link) {
+    border-radius: 0;
+    transform: none;
+    transition: none;
+    position: static;
     flex-direction: row;
+  }
+
+  header nav ul li .nav-link {
+    border-radius: 0.25em;
+    font-size: 1rem;
+    padding: 1rem;
   }
 
   .slot-card-list {
@@ -388,6 +567,35 @@ section.booking {
 }
 
 @media (min-width: 992px) {
+  .specials-item-row {
+    justify-content: center;
+  }
+
+  section.about .inner-wrapper div:nth-child(1) .about-content {
+    flex-direction: row-reverse;
+  }
+
+  section.about .inner-wrapper div:nth-child(2) .about-content {
+    flex-direction: row;
+  }
+
+  section.about .inner-wrapper div:nth-child(1) .image-list {
+    flex: 2 2 0%;
+  }
+
+  section.about .image-list {
+    flex: 1 1 0%;
+  }
+
+  section.about .image-list img {
+    object-fit: cover;
+    object-position: 75% center;
+  }
+
+  section.about .about-copy {
+    flex: 1 1 0%;
+  }
+
   footer .inner-wrapper {
     flex-direction: row;
   }
@@ -396,8 +604,27 @@ section.booking {
     text-align: left;
   }
 
-  .footer-column nav li {
+  footer .inner-wrapper {
+    align-items: start;
+  }
+
+  .footer-column .footer-column-item {
     text-align: left;
     width: fit-content;
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimonial-row {
+    flex-wrap: wrap;
+    width: min(calc(100% - 2rem), 1024px);
+  }
+
+  .testimonial:first-child {
+    margin-inline-start: 0;
+  }
+
+  .testimonial:last-child {
+    margin-inline-end: 0;
   }
 }

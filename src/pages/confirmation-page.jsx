@@ -20,7 +20,7 @@ export default function ConfirmationPage() {
           className="outer-wrapper booking-confirmation"
         >
           <div className="inner-wrapper">
-            <h1 id="booking-confirmation">Booking Confirmation</h1>
+            <h2 id="booking-confirmation">Booking Confirmation</h2>
             <div className="slot-card-list">
               <BookingSlot booking={bookings.bySlot[slot]} />
             </div>
@@ -38,7 +38,7 @@ export default function ConfirmationPage() {
           className="outer-wrapper upcoming-bookings"
         >
           <div className="inner-wrapper">
-            <h1 id="upcoming-bookings">Your Upcoming Bookings</h1>
+            <h2 id="upcoming-bookings">Your Upcoming Bookings</h2>
             <div className="slot-card-list">
               {bookings.allSlots.map((bookingSlot) => {
                 const booking = bookings.bySlot[bookingSlot];
@@ -47,7 +47,21 @@ export default function ConfirmationPage() {
             </div>
           </div>
         </section>
-      ) : null}
+      ) : (
+        <section className="outer-wrapper booking-confirmation">
+          <div className="inner-wrapper">
+            <h2 id="booking-confirmation">Oops!</h2>
+            <p className="booking-confirmation-msg">
+              Looks like you don&apos;t having any upcoming reservations. ☹️
+            </p>
+            <div>
+              <Button>
+                <Link to="/booking">Click here to make a reservation</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      )}
     </main>
   );
 }

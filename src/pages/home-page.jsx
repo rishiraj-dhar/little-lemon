@@ -12,6 +12,12 @@ import emilyDavisImage from "src/assets/emily-davis.jpg";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useRef } from "react";
 
+import restaurantImage from "src/assets/restaurant.jpg";
+import chefImage from "src/assets/restaurant-chef.jpg";
+
+import foundersImage01 from "src/assets/founders-01.jpg";
+import foundersImage02 from "src/assets/founders-02.jpg";
+
 const specials = [
   {
     name: "Greek Salad",
@@ -46,7 +52,7 @@ const testimonials = [
     name: "Michael Thompson",
     rating: 4,
     review:
-      "I had a wonderful experience at Little Lemon. The appetizers were crispy and flavorful, just like how they should be. The modern twist on traditional Mediterranean dishes is a delightful touch. My only complaint is that it gets a bit crowded on weekends, but it's worth the wait!",
+      "I had a wonderful experience at Little Lemon. The appetizers were crispy and flavorful, just like how they should be. My only complaint is that it gets a bit crowded on weekends, but it's worth the wait!",
   },
   {
     img: emilyDavisImage,
@@ -66,7 +72,14 @@ function SpecialCard({ special }) {
           <p className="special-card-price">{special.price}</p>
         </hgroup>
         <p className="special-card-copy">{special.desc}</p>
-        <Button className="special-card-cta">Order a delivery</Button>
+        <Button
+          className="special-card-cta"
+          onClick={() =>
+            alert("Order Delivery feature not available yet! (Coming Soon)")
+          }
+        >
+          Order a delivery
+        </Button>
       </div>
       <div className="special-card-image">
         <img src={special.img} alt={"Image of " + special.name} />
@@ -86,19 +99,61 @@ function SpecialsSection() {
   }, [location]);
 
   return (
-    <section ref={ref} id="specials" className="specials outer-wrapper">
-      <div className="inner-wrapper">
-        <hgroup>
-          <div className="specials-header-row inner-wrapper">
-            <h2 className="header">Specials</h2>
-            <Button className="specials-cta">Online Menu</Button>
-          </div>
-        </hgroup>
-        <div className="specials-item-row">
-          {specials.map((special) => (
-            <SpecialCard key={special.name} special={special} />
-          ))}
+    <section ref={ref} id="specials" className="specials">
+      <div className="outer-wrapper">
+        <div className="inner-wrapper">
+          <hgroup>
+            <div className="specials-header-row inner-wrapper">
+              <h2 className="header">Specials</h2>
+              <Button
+                className="specials-cta"
+                onClick={() =>
+                  alert("Online Menu feature not available yet! (Coming Soon)")
+                }
+              >
+                Online Menu
+              </Button>
+            </div>
+          </hgroup>
         </div>
+      </div>
+      <div className="specials-item-row">
+        {specials.map((special) => (
+          <SpecialCard key={special.name} special={special} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function TestimonialsSection() {
+  return (
+    <section className="testimonials">
+      <div className="outer-wrapper">
+        <div className="inner-wrapper">
+          <h2 className="header">Testimonials</h2>
+        </div>
+      </div>
+      <div className="testimonial-row">
+        {testimonials.map((testimonial) => (
+          <article className="testimonial" key={testimonial.name}>
+            <div className="testimonial-contributor-image">
+              <img src={testimonial.img} alt={"Photo of " + testimonial.name} />
+            </div>
+            <div className="testimonial-contributor-name">
+              <span>{testimonial.name}</span>
+            </div>
+            <div className="testimonial-rating">
+              <span className="testimonial-rating-value">
+                {testimonial.rating}
+              </span>
+              <span className="testimonial-rating-graphic">
+                {"⭐".repeat(testimonial.rating)}
+              </span>
+            </div>
+            <p className="testimonial-review">{testimonial.review}</p>
+          </article>
+        ))}
       </div>
     </section>
   );
@@ -122,12 +177,64 @@ function AboutSection() {
             <h1 className="about-title">Little Lemon</h1>
             <h2 className="about-subtitle">Chicago</h2>
           </hgroup>
-          <p>
-            We are a family owned Mediterranean restaurant, focused on
-            traditional recipes served with a modern twist.
-          </p>
+          <div className="about-content">
+            <div className="image-list">
+              <img src={chefImage} alt="Chef" />
+              <img src={restaurantImage} alt="Restaurant" />
+            </div>
+            <div className="about-copy">
+              <p>
+                Welcome to Little Lemon, a family-owned Mediterranean restaurant
+                located in the heart of Chicago.
+              </p>
+              <p>
+                Our journey began with a shared passion for traditional
+                Mediterranean cuisine and a dream to bring those authentic
+                flavors to our community.
+              </p>
+            </div>
+          </div>
         </div>
-        <div>{/* About Image */}</div>
+        <div>
+          <hgroup className="about-header">
+            <h1 className="about-title">Meet the Founders</h1>
+            <h2 className="about-subtitle">Mario and Adrian</h2>
+          </hgroup>
+          <div className="about-content">
+            <div className="image-list">
+              <img src={foundersImage01} alt="Mario and Adrian" />
+              <img src={foundersImage02} alt="Mario and Adrian" />
+            </div>
+            <div className="about-copy">
+              <p>
+                Mario and Adrian are the heart and soul behind Little Lemon.
+                Growing up in a family where food was the center of every
+                gathering, they developed a deep love for cooking and a keen
+                sense for flavors. Inspired by their heritage and driven by
+                their dream, they decided to open Little Lemon, a place where
+                tradition meets innovation.
+              </p>
+              <p>
+                Mario, with his extensive culinary experience, brings a modern
+                twist to the traditional recipes passed down from their
+                grandparents. Adrian, with his impeccable sense of taste and
+                presentation, ensures that every dish not only tastes amazing
+                but looks beautiful as well.
+              </p>
+              <p>
+                At Little Lemon, we believe that food is more than just
+                sustenance; it&apos;s an experience that brings people together.
+                Our mission is to create a warm, welcoming environment where our
+                guests can enjoy the rich, diverse flavors of the Mediterranean,
+                made with the freshest ingredients and a lot of love.
+              </p>
+              <p>
+                Come join us at Little Lemon and be a part of our family. We
+                look forward to serving you!
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -149,9 +256,7 @@ export default function HomePage() {
               traditional recipes served with a modern twist.
             </p>
             <Button className="hero-cta">
-              <Link style={{ textDecoration: "none" }} to="booking">
-                Reserve a Table
-              </Link>
+              <Link to="booking">Reserve a Table</Link>
             </Button>
           </div>
           <div className="hero-image">
@@ -164,31 +269,7 @@ export default function HomePage() {
       <SpecialsSection />
 
       {/* Testimonials */}
-      <section className="testimonials outer-wrapper">
-        <div className="inner-wrapper">
-          <h2 className="header">Testimonials</h2>
-          <div className="testimonial-row">
-            {testimonials.map((testimonial) => (
-              <article className="testimonial" key={testimonial.name}>
-                <div className="testimonial-contributor-image">
-                  <img
-                    src={testimonial.img}
-                    alt={"Photo of " + testimonial.name}
-                  />
-                </div>
-                <div className="testimonial-contributor-name">
-                  {testimonial.name}
-                </div>
-                <div className="testimonial-rating">
-                  {testimonial.rating}
-                  {"⭐".repeat(testimonial.rating)}
-                </div>
-                <p className="testimonial-review">{testimonial.review}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection />
 
       {/* About Little Lemon */}
       <AboutSection />
