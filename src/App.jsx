@@ -1,44 +1,78 @@
 import { Link, Outlet } from "react-router-dom";
 import "./App.css";
+import { Button } from "components/button";
+import { useState } from "react";
 
 function Header() {
+  const [isNavActive, setIsNavActive] = useState(false);
+
   return (
     <header className="outer-wrapper">
       <div className="inner-wrapper">
+        <Button className="nav-trigger" onClick={() => setIsNavActive(true)}>
+          <img src="/icon-hamburger-menu.svg" alt="hamburger menu icon" />
+        </Button>
         <span className="header-logo">
           <Link to="/">
             <img src="/little-lemon-wordmark.svg" alt="Little Lemon Logo" />
           </Link>
         </span>
-        <nav>
+        <nav data-active={isNavActive}>
+          <Button className="nav-trigger" onClick={() => setIsNavActive(false)}>
+            <img src="/icon-close.svg" alt="close icon" />
+          </Button>
           <ul>
             <li>
-              <Link to="/" className="nav-link">
+              <Link
+                to="/"
+                className="nav-link"
+                onClick={() => setIsNavActive(false)}
+              >
                 <span>Home</span>
               </Link>
             </li>
             <li>
-              <Link to="/#about" className="nav-link">
+              <Link
+                to="/#about"
+                className="nav-link"
+                onClick={() => setIsNavActive(false)}
+              >
                 <span>About</span>
               </Link>
             </li>
             <li>
-              <Link to="/#specials" className="nav-link">
+              <Link
+                to="/#specials"
+                className="nav-link"
+                onClick={() => setIsNavActive(false)}
+              >
                 <span>Menu</span>
               </Link>
             </li>
             <li>
-              <Link to="/confirmation" className="nav-link">
+              <Link
+                to="/confirmation"
+                className="nav-link"
+                onClick={() => setIsNavActive(false)}
+              >
                 <span>Reservations</span>
               </Link>
             </li>
             <li>
-              <Link to="/#specials" className="nav-link">
+              <Link
+                to="/#specials"
+                className="nav-link"
+                onClick={() => setIsNavActive(false)}
+              >
                 <span>Order online</span>
               </Link>
             </li>
             <li>
-              <Link to="/confirmation" className="nav-link">
+              <Link
+                to="/confirmation"
+                className="nav-link"
+                onClick={() => setIsNavActive(false)}
+              >
                 <span>Login</span>
               </Link>
             </li>

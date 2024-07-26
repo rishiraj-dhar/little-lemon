@@ -40,9 +40,9 @@ section.hero > .inner-wrapper {
   display: grid;
   gap: 1rem;
   grid-template-areas:
-    "head head"
-    "main img";
-  grid-template-columns: 2fr 1fr;
+    "head head img"
+    "main . img";
+  grid-template-columns: minmax(auto, 16rem) 1fr minmax(auto, 14rem);
 }
 
 .hero-header {
@@ -84,15 +84,16 @@ section.hero > .inner-wrapper {
 }
 
 .hero-image {
-  position: relative;
+  align-self: end;
+  justify-self: end;
   grid-area: img;
+  width: 100%;
 }
 
 .hero-image img {
   border-radius: 0.5rem;
-  height: 100%;
   object-fit: cover;
-  position: absolute;
+  max-height: 12rem;
   width: 100%;
 }
 
@@ -402,6 +403,59 @@ ul li:has(.nav-link) {
   width: 100%;
 }
 
+header {
+  position: relative;
+}
+
+header nav {
+  position: fixed;
+  height: 100dvh;
+  width: 100dvw;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-100);
+}
+
+header nav[data-active="false"] {
+  left: -100dvw;
+  transition: left 0.2s ease-in;
+}
+
+header nav[data-active="true"] {
+  left: 0;
+  transition: left 0.2s ease-out;
+}
+
+header nav ul li .nav-link {
+  padding: 1rem 2rem;
+}
+
+header button.nav-trigger.btn {
+  background-color: var(--light-100);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  left: 1rem;
+}
+
+header nav button.nav-trigger.btn {
+  top: 2rem;
+}
+
+header button.nav-trigger.btn:hover,
+header button.nav-trigger.btn:active {
+  background-color: var(--light-100);
+}
+
+header .nav-trigger.btn img {
+  height: 2rem;
+  width: 2rem;
+}
+
 header .nav-link {
   color: var(--green);
 }
@@ -477,13 +531,33 @@ section.booking {
 }
 
 @media (min-width: 768px) {
+  header nav {
+    position: static;
+    height: unset;
+    width: unset;
+  }
+
+  header button.nav-trigger.btn {
+    display: none;
+  }
+
   header .inner-wrapper {
     flex-direction: row;
     justify-content: space-between;
   }
 
-  header nav ul {
+  header nav ul:has(li .nav-link) {
+    border-radius: 0;
+    transform: none;
+    transition: none;
+    position: static;
     flex-direction: row;
+  }
+
+  header nav ul li .nav-link {
+    border-radius: 0.25em;
+    font-size: 1rem;
+    padding: 1rem;
   }
 
   .slot-card-list {
