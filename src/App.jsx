@@ -54,7 +54,7 @@ function Footer() {
     <footer className="outer-wrapper">
       <div className="inner-wrapper">
         <div className="footer-logo">
-          <img src="/little-lemon-wordmark.svg" alt="Little Lemon Logo" />
+          <img src="/little-lemon-wordmark-light.svg" alt="Little Lemon Logo" />
         </div>
         <div className="footer-column">
           <h3 className="footer-column-header">Doormat Links</h3>
