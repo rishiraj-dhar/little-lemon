@@ -105,4 +105,5 @@ div#root {
   align-items: stretch;
   display: flex;
   flex-direction: column;
+  min-height: 100dvh;
 }

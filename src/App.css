@@ -328,6 +328,12 @@ footer nav ul li:hover {
   background-color: var(--dark-100);
 }
 
+main.confirmation-page {
+  display: flex;
+  flex: 1 1 0%;
+  flex-direction: column;
+}
+
 .confirmation-page section.outer-wrapper > .inner-wrapper {
   align-items: center;
   display: flex;
@@ -352,6 +358,7 @@ footer nav ul li:hover {
 
 .confirmation-page section.upcoming-bookings {
   background-color: var(--yellow);
+  flex: 1 1 0%;
 }
 
 .confirmation-page section.upcoming-bookings h1 {
