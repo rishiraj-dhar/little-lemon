@@ -52,7 +52,7 @@ const testimonials = [
     name: "Michael Thompson",
     rating: 4,
     review:
-      "I had a wonderful experience at Little Lemon. The appetizers were crispy and flavorful, just like how they should be. The modern twist on traditional Mediterranean dishes is a delightful touch. My only complaint is that it gets a bit crowded on weekends, but it's worth the wait!",
+      "I had a wonderful experience at Little Lemon. The appetizers were crispy and flavorful, just like how they should be. My only complaint is that it gets a bit crowded on weekends, but it's worth the wait!",
   },
   {
     img: emilyDavisImage,
@@ -120,6 +120,39 @@ function SpecialsSection() {
       <div className="specials-item-row">
         {specials.map((special) => (
           <SpecialCard key={special.name} special={special} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function TestimonialsSection() {
+  return (
+    <section className="testimonials">
+      <div className="outer-wrapper">
+        <div className="inner-wrapper">
+          <h2 className="header">Testimonials</h2>
+        </div>
+      </div>
+      <div className="testimonial-row">
+        {testimonials.map((testimonial) => (
+          <article className="testimonial" key={testimonial.name}>
+            <div className="testimonial-contributor-image">
+              <img src={testimonial.img} alt={"Photo of " + testimonial.name} />
+            </div>
+            <div className="testimonial-contributor-name">
+              <span>{testimonial.name}</span>
+            </div>
+            <div className="testimonial-rating">
+              <span className="testimonial-rating-value">
+                {testimonial.rating}
+              </span>
+              <span className="testimonial-rating-graphic">
+                {"⭐".repeat(testimonial.rating)}
+              </span>
+            </div>
+            <p className="testimonial-review">{testimonial.review}</p>
+          </article>
         ))}
       </div>
     </section>
@@ -223,9 +256,7 @@ export default function HomePage() {
               traditional recipes served with a modern twist.
             </p>
             <Button className="hero-cta">
-              <Link style={{ textDecoration: "none" }} to="booking">
-                Reserve a Table
-              </Link>
+              <Link to="booking">Reserve a Table</Link>
             </Button>
           </div>
           <div className="hero-image">
@@ -238,31 +269,7 @@ export default function HomePage() {
       <SpecialsSection />
 
       {/* Testimonials */}
-      <section className="testimonials outer-wrapper">
-        <div className="inner-wrapper">
-          <h2 className="header">Testimonials</h2>
-          <div className="testimonial-row">
-            {testimonials.map((testimonial) => (
-              <article className="testimonial" key={testimonial.name}>
-                <div className="testimonial-contributor-image">
-                  <img
-                    src={testimonial.img}
-                    alt={"Photo of " + testimonial.name}
-                  />
-                </div>
-                <div className="testimonial-contributor-name">
-                  {testimonial.name}
-                </div>
-                <div className="testimonial-rating">
-                  {testimonial.rating}
-                  {"⭐".repeat(testimonial.rating)}
-                </div>
-                <p className="testimonial-review">{testimonial.review}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection />
 
       {/* About Little Lemon */}
       <AboutSection />

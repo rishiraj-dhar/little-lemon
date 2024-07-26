@@ -112,9 +112,12 @@ section.specials {
 }
 
 .specials-item-row {
+  align-items: center;
   display: flex;
   gap: 1rem;
+  justify-content: start;
   overflow-x: auto;
+  margin-inline: auto;
   padding-block: 1rem;
   width: 100%;
 }
@@ -205,21 +208,36 @@ section.testimonials {
 
 .testimonial-row {
   display: flex;
+  gap: 1rem;
+  margin-inline: auto;
   overflow-x: auto;
+  padding-bottom: 1rem;
   width: 100%;
 }
 
 .testimonial {
   background-color: var(--light-100);
-  border: 1px solid var(--dark);
   border-radius: 0.5em;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
   display: grid;
+  gap: 0.25rem;
   grid-template-areas:
     "image review"
     "name review"
     "rating review";
-  grid-template-columns: 9rem 18rem;
+  grid-template-columns: 8rem 18rem;
   padding: 1rem;
+  place-items: center;
+}
+
+.testimonial:first-child {
+  margin-inline-start: 1rem;
+}
+
+.testimonial:last-child {
+  margin-inline-end: 1rem;
 }
 
 .testimonial-contributor-image {
@@ -241,15 +259,32 @@ section.testimonials {
   font-family: var(--font-serif);
   font-size: 2rem;
   font-weight: 700;
+  line-height: 0.75;
+  text-align: center;
 }
 
 .testimonial-rating {
+  align-items: center;
+  display: flex;
+  font-family: var(--font-sans);
   grid-area: rating;
+  justify-content: start;
+}
+
+.testimonial-rating .testimonial-rating-value {
+  font-size: 1.5rem;
+  padding-right: 0.25rem;
+}
+
+.testimonial-rating .testimonial-rating-graphic {
+  font-size: 0.875rem;
 }
 
 .testimonial-review {
+  font-family: var(--font-sans);
   grid-area: review;
-  padding-left: 1rem;
+  padding-inline: 1rem;
+  text-align: justify;
 }
 
 section.about {
@@ -458,6 +493,10 @@ section.booking {
 }
 
 @media (min-width: 992px) {
+  .specials-item-row {
+    justify-content: center;
+  }
+
   section.about .inner-wrapper div:nth-child(1) .about-content {
     flex-direction: row-reverse;
   }
@@ -498,5 +537,20 @@ section.booking {
   .footer-column .footer-column-item {
     text-align: left;
     width: fit-content;
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimonial-row {
+    flex-wrap: wrap;
+    width: min(calc(100% - 2rem), 1024px);
+  }
+
+  .testimonial:first-child {
+    margin-inline-start: 0;
+  }
+
+  .testimonial:last-child {
+    margin-inline-end: 0;
   }
 }
