@@ -21,5 +21,6 @@ module.exports = {
       "warn",
       { allowConstantExport: true },
     ],
+    "testing-library/no-manual-cleanup": "off",
   },
 };

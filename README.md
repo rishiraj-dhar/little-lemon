@@ -1,8 +1,34 @@
-# React + Vite
+# Little Lemon
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This app was developed as part of a capstone project assignment for the Course [Front-End Developer Capstone](https://www.coursera.org/learn/meta-front-end-developer-capstone) by Meta on Coursera.
 
-Currently, two official plugins are available:
+In keeping with recent industry recommendations, this project uses **Vite** instead of Create React App to build the project and **Vitest** instead of Jest for unit testing.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Launching the project
+
+Install the project dependencies
+
+```bash
+# From the project root directory
+npm install
+```
+
+Start the dev server
+
+```bash
+npm run dev
+```
+
+Visit the locally hosted URL in your browser: [http://localhost:5173/](http://localhost:5173/).
+
+## Want to run unit tests?
+
+Run the npm test script
+
+```bash
+npm run test
+```
+
+## Prefer to see a production build of the app?
+
+Head over to [https://little-lemon-rose.vercel.app/](https://little-lemon-rose.vercel.app/).

@@ -42,7 +42,12 @@ export function BookingForm({ availableTimes, onDateChange, onSubmit }) {
   );
 
   return (
-    <form id="booking-form" onSubmit={handleSubmit(onSubmit)}>
+    <form
+      aria-labelledby="booking-form-header"
+      id="booking-form"
+      onSubmit={handleSubmit(onSubmit)}
+    >
+      <h1 id="booking-form-header">Reserve a Table</h1>
       <div className="booking-form-field">
         <label htmlFor="date">
           <span>Choose date</span>
