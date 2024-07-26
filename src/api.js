@@ -231,7 +231,7 @@ export const submitAPI = function (formData) {
     const message = `You already have a reservation for ${formattedDate} at ${formattedTime}. Do you want to update the reservation with these details?`;
     const shouldReplace = window.confirm(message);
     if (!shouldReplace) {
-      return;
+      return null;
     }
   }
 
