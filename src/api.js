@@ -27,6 +27,7 @@ import {
   setSeconds,
 } from "date-fns";
 import { occasions } from "features/booking/config";
+import { getDate, getTime } from "features/booking/utils/date";
 
 const seededRandom = function (seed) {
   var m = 2 ** 35 - 31;
@@ -199,6 +200,12 @@ export const getAllBookings = function () {
   }
 };
 
+export const getBooking = function (slot) {
+  const allBookings = getAllBookings();
+  const booking = allBookings.bySlot[slot];
+  return booking ?? null;
+};
+
 /**
  * Submits booking form data
  *
@@ -216,6 +223,17 @@ export const submitAPI = function (formData) {
   const dateWithMinutes = setMinutes(dateWithSeconds, minutes);
   const dateWithHours = setHours(dateWithMinutes, hours);
   const slot = formatISO(dateWithHours);
+
+  const prevBooking = getBooking(slot);
+  if (prevBooking !== null) {
+    const formattedDate = getDate(slot);
+    const formattedTime = getTime(slot);
+    const message = `You already have a reservation for ${formattedDate} at ${formattedTime}. Do you want to update the reservation with these details?`;
+    const shouldReplace = window.confirm(message);
+    if (!shouldReplace) {
+      return;
+    }
+  }
 
   /** @type {Booking} */
   const booking = { guestCount, occasion, slot };
