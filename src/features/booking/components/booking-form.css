@@ -1,0 +1,67 @@
+section.booking form#booking-form {
+  background-color: var(--green);
+  border-radius: 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-block: 1.5rem;
+  margin-inline: auto;
+  max-width: 24rem;
+  padding: 2rem;
+}
+
+section.booking form#booking-form .booking-form-field > * {
+  width: 100%;
+}
+
+section.booking form#booking-form .booking-form-field .badge {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+section.booking form#booking-form .booking-form-field .badge.required {
+  background-color: var(--peach);
+  border-radius: 9999px;
+  color: var(--green);
+  font-weight: 700;
+  padding: 0.25em 0.75em;
+}
+
+section.booking form#booking-form label {
+  align-items: center;
+  color: var(--light);
+  display: flex;
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  justify-content: space-between;
+}
+
+section.booking form#booking-form input,
+section.booking form#booking-form select {
+  background-color: var(--light);
+  border: 1px solid var(--green);
+  border-radius: 0.25em;
+  color: var(--dark);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+section.booking form#booking-form .booking-form-field .error-msg {
+  background-color: var(--peach-100);
+  border-left: 0.25rem solid var(--coral-900);
+  border-radius: 0.25em;
+  color: var(--coral-900);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  margin-top: 0.5rem;
+  padding: 0.5em;
+}
+
+section.booking form#booking-form button.btn {
+  font-size: 1rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+}

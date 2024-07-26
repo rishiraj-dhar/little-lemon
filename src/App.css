@@ -6,6 +6,7 @@ header .inner-wrapper {
   align-items: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .header-logo img {
@@ -22,7 +23,7 @@ header .inner-wrapper {
 
 .inner-wrapper {
   flex: 1 0 0%;
-  max-width: 768px;
+  max-width: 1024px;
   width: 100%;
 }
 
@@ -263,8 +264,13 @@ footer .inner-wrapper {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  justify-content: space-between;
   padding-block: 1rem;
   text-align: center;
+}
+
+.footer-logo {
+  flex: none;
 }
 
 .footer-logo img {
@@ -284,26 +290,114 @@ footer .inner-wrapper {
 }
 
 nav ul {
+  display: flex;
+  flex-direction: column;
   list-style: none;
-  list-style-position: inside;
   padding-inline: 0;
   margin: 0;
   text-align: center;
 }
 
-.nav-link {
+nav ul li {
+  cursor: pointer;
+  display: flex;
+  flex: none;
+  font-family: var(--font-sans);
   font-weight: 400;
-  text-decoration: none;
 }
 
-.nav-link:hover {
-  font-weight: 700;
+.nav-link {
+  text-decoration: none;
+  padding: 0.5rem;
+  width: 100%;
 }
 
 header .nav-link {
   color: var(--green);
 }
 
+header nav ul li:hover {
+  background-color: var(--light);
+}
+
 footer .nav-link {
   color: var(--light);
+}
+
+footer nav ul li:hover {
+  background-color: var(--dark-100);
+}
+
+.confirmation-page section.outer-wrapper > .inner-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.confirmation-page section.booking-confirmation {
+  background-color: var(--green);
+}
+
+.confirmation-page section.booking-confirmation h1 {
+  color: var(--yellow);
+  font-family: var(--font-serif);
+  font-size: 3rem;
+}
+
+.confirmation-page section.booking-confirmation button {
+  font-size: 1.25rem;
+}
+
+.confirmation-page section.upcoming-bookings {
+  background-color: var(--yellow);
+}
+
+.confirmation-page section.upcoming-bookings h1 {
+  color: var(--dark);
+  font-family: var(--font-serif);
+  font-size: 3rem;
+}
+
+.slot-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+section.booking {
+  background-color: var(--yellow);
+}
+
+@media (min-width: 768px) {
+  header .inner-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  header nav ul {
+    flex-direction: row;
+  }
+
+  .slot-card-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 992px) {
+  footer .inner-wrapper {
+    flex-direction: row;
+  }
+
+  .footer-column {
+    text-align: left;
+  }
+
+  .footer-column nav li {
+    text-align: left;
+    width: fit-content;
+  }
 }

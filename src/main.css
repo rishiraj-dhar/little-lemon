@@ -21,6 +21,7 @@
   --dark-700: hsl(0, 0%, 16%);
   --dark-800: hsl(0, 0%, 14%);
   --dark-900: hsl(0, 0%, 12%);
+  --dark-disabled: hsl(0, 0%, 36%);
 
   --green: #495e57;
   --green-100: hsl(168, 21%, 41%);
@@ -65,6 +66,7 @@
   --yellow-700: hsl(46, 87%, 48%);
   --yellow-800: hsl(44, 85%, 46%);
   --yellow-900: hsl(42, 83%, 44%);
+  --yellow-disabled: hsl(56, 91%, 75%);
 
   /* Fonts */
   --font-sans: "Karla", sans-serif;

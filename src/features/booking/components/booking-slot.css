@@ -1,0 +1,71 @@
+.slot-card {
+  background-color: var(--light);
+  border: 1px solid var(--light-700);
+  border-radius: 0.5em;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1rem;
+  position: relative;
+  width: fit-content;
+}
+
+.slot-card dl,
+.slot-card dt,
+.slot-card dd {
+  margin: 0;
+}
+
+.slot-header {
+  color: var(--dark);
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 400;
+  order: 2;
+  width: 14ch;
+}
+
+.slot-attributes {
+  display: flex;
+  order: 3;
+}
+
+.slot-attributes > * {
+  flex: 1 1 0;
+}
+
+.slot-field {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.slot-attr-key {
+  color: var(--green-100);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+}
+
+.slot-attr-value {
+  color: var(--dark);
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.slot-label {
+  border-left: 0.25rem solid var(--green-100);
+  color: var(--green-100);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.125rem;
+  order: 1;
+  padding: 0.125rem 0.5rem;
+  text-transform: uppercase;
+  width: fit-content;
+}
