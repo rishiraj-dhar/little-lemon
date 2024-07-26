@@ -12,6 +12,12 @@ import emilyDavisImage from "src/assets/emily-davis.jpg";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useRef } from "react";
 
+import restaurantImage from "src/assets/restaurant.jpg";
+import chefImage from "src/assets/restaurant-chef.jpg";
+
+import foundersImage01 from "src/assets/founders-01.jpg";
+import foundersImage02 from "src/assets/founders-02.jpg";
+
 const specials = [
   {
     name: "Greek Salad",
@@ -122,12 +128,64 @@ function AboutSection() {
             <h1 className="about-title">Little Lemon</h1>
             <h2 className="about-subtitle">Chicago</h2>
           </hgroup>
-          <p>
-            We are a family owned Mediterranean restaurant, focused on
-            traditional recipes served with a modern twist.
-          </p>
+          <div className="about-content">
+            <div className="image-list">
+              <img src={chefImage} alt="Chef" />
+              <img src={restaurantImage} alt="Restaurant" />
+            </div>
+            <div className="about-copy">
+              <p>
+                Welcome to Little Lemon, a family-owned Mediterranean restaurant
+                located in the heart of Chicago.
+              </p>
+              <p>
+                Our journey began with a shared passion for traditional
+                Mediterranean cuisine and a dream to bring those authentic
+                flavors to our community.
+              </p>
+            </div>
+          </div>
         </div>
-        <div>{/* About Image */}</div>
+        <div>
+          <hgroup className="about-header">
+            <h1 className="about-title">Meet the Founders</h1>
+            <h2 className="about-subtitle">Mario and Adrian</h2>
+          </hgroup>
+          <div className="about-content">
+            <div className="image-list">
+              <img src={foundersImage01} alt="Mario and Adrian" />
+              <img src={foundersImage02} alt="Mario and Adrian" />
+            </div>
+            <div className="about-copy">
+              <p>
+                Mario and Adrian are the heart and soul behind Little Lemon.
+                Growing up in a family where food was the center of every
+                gathering, they developed a deep love for cooking and a keen
+                sense for flavors. Inspired by their heritage and driven by
+                their dream, they decided to open Little Lemon, a place where
+                tradition meets innovation.
+              </p>
+              <p>
+                Mario, with his extensive culinary experience, brings a modern
+                twist to the traditional recipes passed down from their
+                grandparents. Adrian, with his impeccable sense of taste and
+                presentation, ensures that every dish not only tastes amazing
+                but looks beautiful as well.
+              </p>
+              <p>
+                At Little Lemon, we believe that food is more than just
+                sustenance; it&apos;s an experience that brings people together.
+                Our mission is to create a warm, welcoming environment where our
+                guests can enjoy the rich, diverse flavors of the Mediterranean,
+                made with the freshest ingredients and a lot of love.
+              </p>
+              <p>
+                Come join us at Little Lemon and be a part of our family. We
+                look forward to serving you!
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
