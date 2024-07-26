@@ -47,7 +47,21 @@ export default function ConfirmationPage() {
             </div>
           </div>
         </section>
-      ) : null}
+      ) : (
+        <section className="outer-wrapper booking-confirmation">
+          <div className="inner-wrapper">
+            <h1 id="booking-confirmation">Oops!</h1>
+            <p className="booking-confirmation-msg">
+              Looks like you don&apos;t having any upcoming reservations. ☹️
+            </p>
+            <div>
+              <Button>
+                <Link to="/booking">Click here to make a reservation</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      )}
     </main>
   );
 }

@@ -344,12 +344,20 @@ main.confirmation-page {
 
 .confirmation-page section.booking-confirmation {
   background-color: var(--green);
+  flex: 1 1 0%;
 }
 
 .confirmation-page section.booking-confirmation h1 {
   color: var(--yellow);
   font-family: var(--font-serif);
   font-size: 3rem;
+}
+
+.confirmation-page section.booking-confirmation .booking-confirmation-msg {
+  color: var(--light);
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .confirmation-page section.booking-confirmation button {
