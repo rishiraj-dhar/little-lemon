@@ -95,15 +95,78 @@ function Footer() {
         </div>
         <div className="footer-column">
           <h3 className="footer-column-header">Contact Us</h3>
-          <p className="footer-column-item">Address</p>
-          <p className="footer-column-item">Phone Number</p>
-          <p className="footer-column-item">Email</p>
+          <ul>
+            <li className="footer-column-item">
+              <h4 className="footer-column-sub-header">Address</h4>
+              <Link
+                className="nav-link"
+                rel="noopener noreferrer"
+                target="_blank"
+                to="https://www.google.com/maps/search/?api=1&query=123+Mediterranean+Ave,+Chicago,+IL+60601"
+              >
+                Little Lemon <br />
+                123 Mediterranean Ave Chicago <br />
+                IL 60601
+              </Link>
+            </li>
+            <li className="footer-column-item">
+              <h4 className="footer-column-sub-header">Phone Number</h4>
+              <Link
+                className="nav-link"
+                rel="noopener noreferrer"
+                target="_blank"
+                to="tel:+13125556789"
+              >
+                (312) 555-6789
+              </Link>
+            </li>
+            <li className="footer-column-item">
+              <h4 className="footer-column-sub-header">Email</h4>
+              <Link
+                className="nav-link"
+                rel="noopener noreferrer"
+                target="_blank"
+                to="mailto:hello@littlelemonchicago.com"
+              >
+                hello@littlelemonchicago.com
+              </Link>
+            </li>
+          </ul>
         </div>
         <div className="footer-column">
           <h3 className="footer-column-header">Social Media Links</h3>
-          <p className="footer-column-item">Facebook</p>
-          <p className="footer-column-item">Instagram</p>
-          <p className="footer-column-item">X</p>
+          <ul>
+            <li className="footer-column-item">
+              <Link
+                className="nav-link"
+                rel="noopener noreferrer"
+                target="_blank"
+                to="https://facebook.com/littlelemonchicago"
+              >
+                Facebook
+              </Link>
+            </li>
+            <li className="footer-column-item">
+              <Link
+                className="nav-link"
+                rel="noopener noreferrer"
+                target="_blank"
+                to="https://instagram.com/littlelemonchicago"
+              >
+                Instagram
+              </Link>
+            </li>
+            <li className="footer-column-item">
+              <Link
+                className="nav-link"
+                rel="noopener noreferrer"
+                target="_blank"
+                to="https://x.com/littlelemonchicago"
+              >
+                X
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
     </footer>

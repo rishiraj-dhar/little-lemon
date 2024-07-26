@@ -270,6 +270,7 @@ footer .inner-wrapper {
 }
 
 .footer-logo {
+  align-self: center;
   flex: none;
 }
 
@@ -284,12 +285,22 @@ footer .inner-wrapper {
   font-weight: 400;
 }
 
+.footer-column-sub-header {
+  color: var(--coral);
+  font-family: var(--font-serif);
+  font-size: 1.375rem;
+  font-weight: 500;
+  padding: 0.5rem;
+}
+
 .footer-column-item {
   color: var(--light);
+  display: flex;
+  flex-direction: column;
   padding-block: 0.25rem;
 }
 
-nav ul {
+ul:has(li .nav-link) {
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -298,17 +309,18 @@ nav ul {
   text-align: center;
 }
 
-nav ul li {
+ul li:has(.nav-link) {
   cursor: pointer;
   display: flex;
   flex: none;
-  font-family: var(--font-sans);
-  font-weight: 400;
 }
 
 .nav-link {
-  text-decoration: none;
+  border-radius: 0.25em;
+  font-family: var(--font-sans);
+  font-weight: 400;
   padding: 0.5rem;
+  text-decoration: none;
   width: 100%;
 }
 
@@ -316,7 +328,7 @@ header .nav-link {
   color: var(--green);
 }
 
-header nav ul li:hover {
+header nav ul li .nav-link:hover {
   background-color: var(--light);
 }
 
@@ -324,7 +336,7 @@ footer .nav-link {
   color: var(--light);
 }
 
-footer nav ul li:hover {
+footer li .nav-link:hover {
   background-color: var(--dark-100);
 }
 
@@ -411,7 +423,11 @@ section.booking {
     text-align: left;
   }
 
-  .footer-column nav li {
+  footer .inner-wrapper {
+    align-items: start;
+  }
+
+  .footer-column .footer-column-item {
     text-align: left;
     width: fit-content;
   }
