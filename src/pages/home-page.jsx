@@ -9,7 +9,8 @@ import lemonDessertImage from "src/assets/lemon-dessert.jpg";
 import sarahJohnsonImage from "src/assets/sarah-johnson.jpg";
 import michaelThompsonImage from "src/assets/michael-thompson.jpg";
 import emilyDavisImage from "src/assets/emily-davis.jpg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useRef } from "react";
 
 const specials = [
   {
@@ -74,6 +75,64 @@ function SpecialCard({ special }) {
   );
 }
 
+function SpecialsSection() {
+  const ref = useRef();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === "#specials") {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location]);
+
+  return (
+    <section ref={ref} id="specials" className="specials outer-wrapper">
+      <div className="inner-wrapper">
+        <hgroup>
+          <div className="specials-header-row inner-wrapper">
+            <h2 className="header">Specials</h2>
+            <Button className="specials-cta">Online Menu</Button>
+          </div>
+        </hgroup>
+        <div className="specials-item-row">
+          {specials.map((special) => (
+            <SpecialCard key={special.name} special={special} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function AboutSection() {
+  const ref = useRef();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === "#about") {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location]);
+
+  return (
+    <section ref={ref} id="about" className="about outer-wrapper">
+      <div className="inner-wrapper">
+        <div>
+          <hgroup className="about-header">
+            <h1 className="about-title">Little Lemon</h1>
+            <h2 className="about-subtitle">Chicago</h2>
+          </hgroup>
+          <p>
+            We are a family owned Mediterranean restaurant, focused on
+            traditional recipes served with a modern twist.
+          </p>
+        </div>
+        <div>{/* About Image */}</div>
+      </div>
+    </section>
+  );
+}
+
 export default function HomePage() {
   return (
     <>
@@ -102,21 +161,7 @@ export default function HomePage() {
       </section>
 
       {/* Highlights and specials */}
-      <section className="specials outer-wrapper">
-        <div className="inner-wrapper">
-          <hgroup>
-            <div className="specials-header-row inner-wrapper">
-              <h2 className="header">Specials</h2>
-              <Button className="specials-cta">Online Menu</Button>
-            </div>
-          </hgroup>
-          <div className="specials-item-row">
-            {specials.map((special) => (
-              <SpecialCard key={special.name} special={special} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <SpecialsSection />
 
       {/* Testimonials */}
       <section className="testimonials outer-wrapper">
@@ -146,21 +191,7 @@ export default function HomePage() {
       </section>
 
       {/* About Little Lemon */}
-      <section className="about outer-wrapper">
-        <div className="inner-wrapper">
-          <div>
-            <hgroup className="about-header">
-              <h1 className="about-title">Little Lemon</h1>
-              <h2 className="about-subtitle">Chicago</h2>
-            </hgroup>
-            <p>
-              We are a family owned Mediterranean restaurant, focused on
-              traditional recipes served with a modern twist.
-            </p>
-          </div>
-          <div>{/* About Image */}</div>
-        </div>
-      </section>
+      <AboutSection />
     </>
   );
 }

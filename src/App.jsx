@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import "./App.css";
 
 function Header() {
@@ -11,34 +11,34 @@ function Header() {
         <nav>
           <ul>
             <li>
-              <a className="nav-link" href="#">
+              <Link to="/" className="nav-link">
                 <span>Home</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="nav-link" href="#">
+              <Link to="/#about" className="nav-link">
                 <span>About</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="nav-link" href="#">
+              <Link to="/#specials" className="nav-link">
                 <span>Menu</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="nav-link" href="#">
+              <Link to="/confirmation" className="nav-link">
                 <span>Reservations</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="nav-link" href="#">
+              <Link to="/#specials" className="nav-link">
                 <span>Order online</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="nav-link" href="#">
+              <Link to="/confirmation" className="nav-link">
                 <span>Login</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
@@ -54,50 +54,50 @@ function Footer() {
         <div className="footer-logo">
           <img src="/little-lemon-wordmark.svg" alt="Little Lemon Logo" />
         </div>
-        <div>
+        <div className="footer-column">
           <h3 className="footer-column-header">Doormat Links</h3>
           <nav>
             <ul>
               <li className="footer-column-item">
-                <a className="nav-link" href="#">
+                <Link to="/" className="nav-link">
                   <span>Home</span>
-                </a>
+                </Link>
               </li>
               <li className="footer-column-item">
-                <a className="nav-link" href="#">
+                <Link to="/#about" className="nav-link">
                   <span>About</span>
-                </a>
+                </Link>
               </li>
               <li className="footer-column-item">
-                <a className="nav-link" href="#">
+                <Link to="/#specials" className="nav-link">
                   <span>Menu</span>
-                </a>
+                </Link>
               </li>
               <li className="footer-column-item">
-                <a className="nav-link" href="#">
+                <Link to="/confirmation" className="nav-link">
                   <span>Reservations</span>
-                </a>
+                </Link>
               </li>
               <li className="footer-column-item">
-                <a className="nav-link" href="#">
+                <Link to="/#specials" className="nav-link">
                   <span>Order online</span>
-                </a>
+                </Link>
               </li>
               <li className="footer-column-item">
-                <a className="nav-link" href="#">
+                <Link to="/confirmation" className="nav-link">
                   <span>Login</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
         </div>
-        <div>
+        <div className="footer-column">
           <h3 className="footer-column-header">Contact Us</h3>
           <p className="footer-column-item">Address</p>
           <p className="footer-column-item">Phone Number</p>
           <p className="footer-column-item">Email</p>
         </div>
-        <div>
+        <div className="footer-column">
           <h3 className="footer-column-header">Social Media Links</h3>
           <p className="footer-column-item">Facebook</p>
           <p className="footer-column-item">Instagram</p>

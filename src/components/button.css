@@ -1,10 +1,7 @@
 button.btn {
   align-items: center;
-  background-color: var(--yellow-500);
   border: none;
   border-radius: 0.25em;
-  color: var(--dark-700);
-  cursor: pointer;
   display: flex;
   font-family: var(--font-sans);
   font-weight: 600;
@@ -13,14 +10,30 @@ button.btn {
   transition: background-color 0.1s ease-in-out;
 }
 
-button.btn:hover {
+button.btn:disabled {
+  background-color: var(--yellow-disabled);
+  color: var(--dark-disabled);
+}
+
+button.btn:enabled {
+  background-color: var(--yellow-500);
+  color: var(--dark-700);
+  cursor: pointer;
+}
+
+button.btn:enabled:hover {
   background-color: var(--yellow-400);
 }
 
-button.btn:active {
+button.btn:enabled:active {
   background-color: var(--yellow-600);
 }
 
-button.btn:focus-visible {
+button.btn:enabled:focus-visible {
   outline: 2px solid var(--dark-700);
+}
+
+button.btn a {
+  color: inherit;
+  text-decoration: none;
 }

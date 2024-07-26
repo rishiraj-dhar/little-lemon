@@ -5,6 +5,7 @@ import "./main.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/home-page.jsx";
 import BookingPage from "./pages/booking-page.jsx";
+import ConfirmationPage from "./pages/confirmation-page.jsx";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "booking",
         element: <BookingPage />,
+      },
+      {
+        path: "confirmation",
+        element: <ConfirmationPage />,
       },
     ],
   },
