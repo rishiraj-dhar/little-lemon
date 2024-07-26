@@ -347,7 +347,7 @@ main.confirmation-page {
   flex: 1 1 0%;
 }
 
-.confirmation-page section.booking-confirmation h1 {
+.confirmation-page section.booking-confirmation h2 {
   color: var(--yellow);
   font-family: var(--font-serif);
   font-size: 3rem;
@@ -369,7 +369,7 @@ main.confirmation-page {
   flex: 1 1 0%;
 }
 
-.confirmation-page section.upcoming-bookings h1 {
+.confirmation-page section.upcoming-bookings h2 {
   color: var(--dark);
   font-family: var(--font-serif);
   font-size: 3rem;
