@@ -6,7 +6,9 @@ function Header() {
     <header className="outer-wrapper">
       <div className="inner-wrapper">
         <span className="header-logo">
-          <img src="/little-lemon-wordmark.svg" alt="Little Lemon Logo" />
+          <Link to="/">
+            <img src="/little-lemon-wordmark.svg" alt="Little Lemon Logo" />
+          </Link>
         </span>
         <nav>
           <ul>
