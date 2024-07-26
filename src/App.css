@@ -132,7 +132,7 @@ section.specials {
   display: flex;
   flex: none;
   flex-direction: column-reverse;
-  height: 28rem;
+  height: 30rem;
   overflow: hidden;
   width: 16rem;
 }
