@@ -72,7 +72,14 @@ function SpecialCard({ special }) {
           <p className="special-card-price">{special.price}</p>
         </hgroup>
         <p className="special-card-copy">{special.desc}</p>
-        <Button className="special-card-cta">Order a delivery</Button>
+        <Button
+          className="special-card-cta"
+          onClick={() =>
+            alert("Order Delivery feature not available yet! (Coming Soon)")
+          }
+        >
+          Order a delivery
+        </Button>
       </div>
       <div className="special-card-image">
         <img src={special.img} alt={"Image of " + special.name} />
@@ -92,19 +99,28 @@ function SpecialsSection() {
   }, [location]);
 
   return (
-    <section ref={ref} id="specials" className="specials outer-wrapper">
-      <div className="inner-wrapper">
-        <hgroup>
-          <div className="specials-header-row inner-wrapper">
-            <h2 className="header">Specials</h2>
-            <Button className="specials-cta">Online Menu</Button>
-          </div>
-        </hgroup>
-        <div className="specials-item-row">
-          {specials.map((special) => (
-            <SpecialCard key={special.name} special={special} />
-          ))}
+    <section ref={ref} id="specials" className="specials">
+      <div className="outer-wrapper">
+        <div className="inner-wrapper">
+          <hgroup>
+            <div className="specials-header-row inner-wrapper">
+              <h2 className="header">Specials</h2>
+              <Button
+                className="specials-cta"
+                onClick={() =>
+                  alert("Online Menu feature not available yet! (Coming Soon)")
+                }
+              >
+                Online Menu
+              </Button>
+            </div>
+          </hgroup>
         </div>
+      </div>
+      <div className="specials-item-row">
+        {specials.map((special) => (
+          <SpecialCard key={special.name} special={special} />
+        ))}
       </div>
     </section>
   );

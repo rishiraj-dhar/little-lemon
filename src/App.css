@@ -120,15 +120,25 @@ section.specials {
 }
 
 .special-card {
-  background-color: var(--light-100);
-  border: 1px solid var(--dark);
+  background-color: var(--light);
   border-radius: 0.5em;
+  box-shadow:
+    0 4px 6px 1px rgb(0 0 0 / 0.1),
+    0 2px 4px 1px rgb(0 0 0 / 0.1);
   display: flex;
   flex: none;
   flex-direction: column-reverse;
   height: 28rem;
   overflow: hidden;
   width: 16rem;
+}
+
+.special-card:first-child {
+  margin-inline-start: 1rem;
+}
+
+.special-card:last-child {
+  margin-inline-end: 1rem;
 }
 
 .special-card-content {
@@ -172,8 +182,10 @@ section.specials {
   text-overflow: ellipsis;
 }
 
-.special-card-cta {
+.special-card-cta.btn {
   flex: none;
+  font-size: 1rem;
+  padding: 0.5rem;
 }
 
 .special-card-image {
